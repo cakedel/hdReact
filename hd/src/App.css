@@ -4,6 +4,7 @@
     --lc: #f9f9f9;
     --dc: #444444;
     --gc: #dddddd;
+    --wc: #fff;
   }
   
   .inner {
@@ -11,6 +12,43 @@
     width: 1200px;
     margin: 0 auto;
   }
+
+  .cbtn {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid var(--mc);
+    color: var(--mc);
+    font-size: 13px;
+    background: var(--wc);
+  }
+
+  .cbtn::after {
+    content: " \e93e";
+    font-family: xeicon;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    font-size: 10px;
+    vertical-align: 1px;
+  }
+ 
+.csc {
+  padding: 100px 0;
+}
+
+.csc h2 {
+  position: relative;
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.csc p {
+  position: relative;
+  font-size: 17px;
+  margin: 0 0 40px 0;
+  text-align: center;
+}
   
   .TopBanner {
     background: var(--mc);
@@ -47,7 +85,7 @@
   }
   
   .Header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -223,8 +261,10 @@
   }
 
   .MainVisual {
-    padding: 155px 0 0 0;
+    position: relative;
     color: var(--lc);
+    height: calc(100vh - 255px);
+    transform: translateY(-100px);
   }
 
   .MainVisual figure {
@@ -245,8 +285,52 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--lc);
-    text-shadow: 0 0 3px var(--dc);
   }
+
+  .MainVisual .tit {
+    width: 900px;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+    text-shadow: 0 0 2px var(--dc);
+    word-break: keep-all;
+    line-height: 1.2;
+    transition: 0.5s;
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  .MainVisual figure.on .tit {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .MainVisual .des {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 0 50px 0;
+    text-shadow: 0 0 2px var(--dc);
+    transition: 0.5s 0.5s;
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  .MainVisual figure.on .des {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .MainVisual figure a {
+    transition: 0.5s 1s;
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  .MainVisual figure.on a {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
 
   .MainVisual .slick-track, .MainVisual .slick-slide {
     transition-duration: 5ms;
@@ -262,55 +346,6 @@
     background-image: url(../public/assets/img/main_visual03.jpg);
   }
 
-.MainVisual figure h2 {
-    font-size: 50px;
-    font-weight: 900;
-    margin: 0 0 20px 0;
-    transform: translateY(100px);
-    opacity: 0;
-}
-
-.MainVisual figure.on h2 {
-    transform: translateY(0);
-    opacity: 1;
-    transition: 0.5s;
-}
-
-.MainVisual figure span {
-    display: block;
-    margin: 10px 0;
-}
-
-.MainVisual figure p {
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 1.45;
-    margin: 0 0 50px 0;
-    transform: translateY(100px);
-    opacity: 0;
-}
-
-.MainVisual figure.on p {
-    transform: translateY(0);
-    opacity: 1;
-    transition: 0.5s 0.5s;
-}
-
-.MainVisual figure a {
-    display: inline-block;
-    padding: 10px 25px;
-    border: 1px solid var(--lc);
-    font-size: 13px;
-    transform: translateY(100px);
-    opacity: 0;
-}
-
-.MainVisual figure.on a {
-    transform: translateY(0);
-    opacity: 1;
-    transition: 0.5s 1s;
-}
-
 .MainVisual .slideNum {
     position: absolute;
     bottom: 100px;
@@ -321,10 +356,34 @@
 }
 .MainVisual .slideTab {
     position: absolute;
-    top: 50%;
+    top: calc(50% + 35px);
     left:50%;
     transform: translate(-50%, -50%);
     margin-left: 600px;
+}
+
+.MainVisual .slideTab li {
+  text-align: right;
+  margin: 0 0 15px 0;
+  font-size: 0;
+}
+
+.MainVisual .slideTab li::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--lc);
+  margin: 0 0 0 15px;
+  vertical-align: middle;
+}
+
+.MainVisual .slideTab li.on {
+  font-size: 15px;
+}
+
+.MainVisual .slideTab li.on::after {
+  background: var(--lc);
 }
 
 .MainVisual .slideArrows button {
@@ -349,3 +408,141 @@
 .MainVisual .slideArrows button:last-child {
     margin: 0 0 0 800px;
 }
+
+.MainContent .inner {
+  display: flex;
+  gap: 30px;
+}
+
+.MainContent .inner>figure {
+  flex: 1;
+  text-align: center;
+}
+
+.MainContent .inner>figure img {
+  transition: 0.5s;
+}
+
+.MainContent .inner>figure:hover img {
+  transform: scale(1.2);
+}
+
+.MainContent .box {
+  margin: 0 0 40px 0;
+  overflow: hidden;
+}
+
+.MainContent .tit {
+  position: relative;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+}
+
+.MainContent .tit::after {
+  position: absolute;
+  top: -300%;
+  left: calc(50% - 1px);
+  content: "";
+  width: 2px;
+  height: 40px;
+  background: var(--mc);
+}
+
+.MainContent .des {
+  display: inline-block;
+  width: 70%;
+  font-size: 15px;
+  margin: 0 0 30px 0;
+  line-height: 1.45;
+  word-break: keep-all;
+  /* white-space: pre-line; */
+  /* 줄바꿈 */
+}
+
+.Portfolio {
+  background: url(../public/assets/img/section1_bg.jpg)no-repeat top;
+}
+
+.Portfolio h2 {
+  font-size: 35px;
+  padding-top: 40px;
+  color: var(--lc);
+  text-align: left;
+  
+}
+
+.Portfolio p {
+  color: var(--lc);
+  text-align: left;
+}
+
+.Portfolio .arrows {
+  align-self: flex-start;
+  color: var(--lc);
+  border: 1px solid var(--lc);
+  font-size: 30px;
+}
+
+.Portfolio .arrows i {
+  padding: 10px;
+}
+
+.Portfolio .arrows i:first-child {
+  border-right: 1px solid var(--lc);
+}
+
+.Portfolio .container {
+  display: flex;
+  width: calc(1200px + (100% - 1200px) / 2);
+
+  margin-left: auto;
+}
+
+.Portfolio .container>div {
+min-width: 0;
+}
+
+.Portfolio .container .left {
+  width: 450px;
+}
+
+.Portfolio .container .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.Portfolio .right .slide {
+  overflow: hidden;
+  margin: auto 0 0 0;
+}
+
+.Portfolio .right_slide figure {
+
+  padding: 0 20px 0 0;
+}
+.Portfolio .right_slide {
+
+  width: 1300px;
+}
+
+.Portfolio .box {
+  margin: 0 0 30px 0;
+}
+
+.Portfolio .des {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.Portfolio .left .box {
+  width: 400px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.Portfolio .right .box {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+

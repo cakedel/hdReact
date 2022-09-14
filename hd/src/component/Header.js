@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import TopBanner from './TopBanner';
 
 const NAVLINK = [
@@ -12,9 +12,17 @@ const NAVLINK = [
 const Header = () => {
     const [toggle, setToggle] = useState(false);
     const [toggleSearch, settoggleSearch] = useState(false);
-
+    const HeaderScroll = useRef();
+    useEffect(() => {
+        window.addEventListener("scroll", function () {
+            const SCT = window.scrollY
+            SCT > 0
+                ? HeaderScroll.current.classList.add('on')
+                : HeaderScroll.current.classList.remove('on')
+        })
+    }, [])
     return (
-        <header className="Header">
+        <header className="Header" ref={HeaderScroll}>
             <TopBanner />
             <div className="hd_wrap">
                 <h1><a href="/">
