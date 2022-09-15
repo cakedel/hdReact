@@ -33,7 +33,7 @@ const Portfolio = () => {
                             {
                                 PORTFOLIO.map((slide) => {
                                     return (
-                                        <figure>
+                                        <figure key={slide.id}>
                                             <div className="box">
                                                 <img src={process.env.PUBLIC_URL + "/assets/img/main_m0" + slide.id + ".jpg"} />
                                             </div>
@@ -59,7 +59,7 @@ const Portfolio = () => {
                             {
                                 PORTFOLIO.map((slide) => {
                                     return (
-                                        <figure>
+                                        <figure key={slide.id}>
                                             <div className="box">
                                                 <img src={process.env.PUBLIC_URL + "/assets/img/main_m0" + slide.id + ".jpg"} />
                                             </div>

@@ -545,4 +545,148 @@ min-width: 0;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+.Solution {
+  background: var(--lc);
+}
+
+.Solution .container {
+position: relative;
+}
+
+.Solution .des {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin: 0 0 0 -540px;
+  background: var(--wc);
+  padding: 50px 40px;
+  width: 320px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.Solution .des::after {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: -20px;
+  width: 40px;
+  height: 2px;
+  background: var(--mc);
+
+}
+
+.Solution .des h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+}
+
+.Solution .des p {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: left;
+  word-break: keep-all;
+  min-height: 120px;
+  line-height: 1.45;
+}
+
+.Solution .des a {
+  margin: 0 0 30px 0;
+}
+
+.Solution .num {
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--mc);
+}
+.Solution .num span {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--dc);
+}
+
+.Solution .solution_slide figure {
+  width: 1200px;
+  filter: grayscale(1) brightness(1.5);
+}
+
+.Solution .solution_slide figure.on {
+  filter: grayscale(0) brightness(1);
+}
+.Solution .solution_slide img {
+margin: 0 auto;
+}
+
+.Solution .arrows i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: var(--wc);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px 30px;
+  border-radius: 5px;
+}
+
+.Solution .arrows i:first-child {
+  margin-left: -620px;
+}
+.Solution .arrows i:last-child {
+  margin-left: 620px;
+}
+
+.Solution .dots {
+  font-size: 0;
+  text-align: center;
+}
+
+.Solution .dots li {
+  display: inline-block;
+  background: var(--gc);
+  width: 3px;
+  height: 20px;
+  margin: 20px 10px 0 10px;
+}
+
+.Solution .dots li.on {
+  background: var(--mc);
+}
+
+.Promotion {
+  position: relative;
+  background: url(../public/assets/img/section4_bg.jpg)no-repeat left bottom;
+}
+
+.Promotion .movie {
+  position: relative;
+  margin: 0 auto;
+  width: 800px;
+  height: 450px;
+}
+
+.Promotion .movie .youtube {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+
+.Promotion .des {
+  display: flex;
+  gap: 150px;
+  justify-content: center;
+  text-align: center;
+}
+
+.Promotion .des h3 {
+  font-size: 20px;
+  color: var(--sc);
+  margin: 0 0 20px 0;
+}
+.Promotion .des p {
+  font-size: 15px;
+  color: var(--lc);
+}
 

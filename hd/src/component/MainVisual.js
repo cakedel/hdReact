@@ -39,7 +39,6 @@ const MainVisual = () => {
                     })
                 }
             </Slider >
-            {console.log(mainSlide)}
             <div className="slideNum">
                 0{IDX + 1}<span>{` / 0${SLIDE.length}`}</span>
             </div>
