@@ -690,3 +690,137 @@ margin: 0 auto;
   color: var(--lc);
 }
 
+.News .inner {
+  display: flex;
+  gap: 30px;
+}
+
+.News .inner figure {
+  flex: 1;
+}
+
+.News .inner figure img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.News .box {
+  margin: 0 0 30px 0;
+}
+
+.News strong {
+  display: block;
+  margin: 0 0 15px 0;
+  font-size: 14px;
+  color: var(--mc);
+}
+
+.News figure .title {
+  font-size: 20px;
+  font-weight: 500;
+  word-break: keep-all;
+  line-height: 1.45;
+  min-height: 80px;
+}
+
+.News figure:hover .title {
+  text-decoration: underline;
+}
+
+.News span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.Footer {
+  border-top: 1px solid var(--gc);
+}
+
+.Footer .inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer .ft_top {
+  line-height: 70px;
+  border-bottom: 1px solid var(--gc);
+}
+
+.Footer .ft_top .left {
+  display: flex;
+  gap: 50px;
+}
+
+.Footer .ft_top .left li {
+  position: relative;
+}
+
+.Footer .ft_top .left li~li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  width: 4px;
+  height: 4px;
+  background: var(--gc);
+}
+
+.Footer .ft_top .left li span {
+  color: var(--mc);
+  font-size: 20px;
+  margin: 0 0 0 5px;
+}
+
+.Footer .ft_bottom {
+  padding: 30px 0;
+  line-height: 1.45;
+}
+
+.ServiceLink {
+  display: flex;
+  gap: 30px;
+  position: relative;
+}
+
+.ServiceLink .title {
+  position: relative;
+  padding: 0 40px 0 0;
+  cursor: pointer;
+}
+
+.ServiceLink .title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 10px;
+  height: 2px;
+  background: var(--mc);
+}
+
+.ServiceLink .title.on::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 4px);
+  right: 4px;
+  width: 2px;
+  height: 10px;
+  background: var(--mc);
+}
+
+.ServiceLink .subLInk {
+  display: none;
+  gap: 30px;
+  position: absolute;
+  top: -72px;
+  right: 0;
+  width: 1200px;
+  background: var(--lc);
+  border: 1px solid var(--gc);
+  padding: 0 0 0 30px;
+}
+
+.ServiceLink .subLInk.on {
+  display: flex;
+}

@@ -14,6 +14,8 @@ const PORTFOLIO = [
     { id: 9, title: "부산국제금융센터" },
 ]
 
+const NewPORTFOLIO = [...PORTFOLIO, PORTFOLIO[0]].slice(1, PORTFOLIO.length)
+
 const Portfolio = () => {
     // const NewPORTFOLIO = PTF
     const [rightState, setRightState] = useState();
@@ -52,12 +54,12 @@ const Portfolio = () => {
                     <p>특별한 기술을 실현할수록 여러분의 삶의 무대도 특별해 집니다.</p>
                     <div className="arrows">
                         <i className="xi-angle-left" onClick={() => rightSlide.current.slickPrev()}></i>
-                        <i className="xi-angle-right"onClick={() => rightSlide.current.slickNext()}></i>
+                        <i className="xi-angle-right" onClick={() => rightSlide.current.slickNext()}></i>
                     </div>
                     <div className="slide">
                         <Slider slidesToShow={5} className="right_slide" ref={rightSlide} asNavFor={leftState} arrows={false}>
                             {
-                                PORTFOLIO.map((slide) => {
+                                NewPORTFOLIO.map((slide) => {
                                     return (
                                         <figure key={slide.id}>
                                             <div className="box">
